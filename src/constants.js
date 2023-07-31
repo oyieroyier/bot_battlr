@@ -1,1 +1,1 @@
-export const baseURL = 'https://botbattlr-bin.vercel.app';
+export const baseURL = 'http://localhost:3000';

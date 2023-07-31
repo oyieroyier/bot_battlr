@@ -5,6 +5,8 @@ import { HStack, Heading } from '@chakra-ui/react';
 
 const MyBotArmy = () => {
 	const [bots, setBots] = useState([]);
+	const disabled = true;
+
 	useEffect(() => {
 		fetch(`${baseURL}/my_bots`)
 			.then((res) => res.json())
@@ -25,6 +27,7 @@ const MyBotArmy = () => {
 						damage={bot.damage}
 						botClass={bot.bot_class}
 						id={bot.id}
+						disabled={disabled}
 					/>
 				))}
 			</HStack>

@@ -9,6 +9,7 @@ const BotCard = ({
 	armor,
 	botClass,
 	id,
+	disabled,
 }) => {
 	function addToMyArmy(id) {
 		fetch(`${baseURL}/bots/${id}`)
@@ -62,7 +63,14 @@ const BotCard = ({
 						<div className="tag">{botClass}</div>
 					</div>
 					<div className="hex-tag">
-						<Button onClick={() => addToMyArmy(id)}>Add to Army</Button>
+						{disabled ? null : (
+							<Button
+								onClick={disabled ? null : () => addToMyArmy(id)}
+								disabled={disabled}
+							>
+								Add to Army
+							</Button>
+						)}
 						<Button onClick={() => returnToBotCollection(id)}>Delete</Button>
 					</div>
 					<i className="fa fa-angle-down" />

@@ -14,7 +14,7 @@ const BotCollection = () => {
 		<>
 			<Heading>Bot Army</Heading>
 
-			<HStack wrap={'wrap'}>
+			<HStack wrap={'wrap'} justify={'center'} gap={"1rem"}>
 				{bots.map((bot) => (
 					<BotCard
 						key={bot.id}
